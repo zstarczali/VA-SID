@@ -2,7 +2,7 @@
 name = "va-sid"
 version = "1.0.0"
 edition = "2021"
-license = "GPL-3.0-or-later"
+license = "MIT AND GPL-2.0-or-later AND GPL-3.0-or-later"
 description = "C64 SID emulation shared by C64 Visual Assembler and VA SID Studio: VA SID Core, reSID, cycle-exact 6510 / CIA / VIC-II, .sid playback and the editor preview renderer."
 repository = "https://github.com/zstarczali/VA-SID"
 

@@ -1,0 +1,23 @@
+[package]
+name = "va-sid"
+version = "1.0.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "C64 SID emulation shared by C64 Visual Assembler and VA SID Studio: VA SID Core, reSID, cycle-exact 6510 / CIA / VIC-II, .sid playback and the editor preview renderer."
+repository = "https://github.com/zstarczali/VA-SID"
+
+[lib]
+name = "va_sid"
+
+[dependencies]
+resid-rs = { path = "vendor/resid-rs" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+
+# the SID emulation runs slower than real time unoptimised
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2

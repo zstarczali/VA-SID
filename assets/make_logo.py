@@ -40,20 +40,34 @@ def chip_cells():
         for y in (9, 10, 11, 28, 29, 30):
             cells[(x, y)] = "mid"
             cells[(x + 1, y)] = "mid"
-    # sawtooth, then a pulse
+    # "SID" in 5-row pixel letters
+    glyphs = {
+        "S": [".###", "#...", ".##.", "...#", "###."],
+        "I": ["###", ".#.", ".#.", ".#.", "###"],
+        "D": ["###.", "#..#", "#..#", "#..#", "###."],
+    }
+    left = 13
+    for letter in "SID":
+        rows = glyphs[letter]
+        for dy, row in enumerate(rows):
+            for dx, bit in enumerate(row):
+                if bit == "#":
+                    cells[(left + dx, 14 + dy)] = "bright"
+        left += len(rows[0]) + 1
+    # below it a sawtooth, then a pulse
     for tooth in range(2):
-        left = 10 + tooth * 6
-        for step in range(6):
-            cells[(left + step, 24 - step)] = "bright"
-        for y in range(19, 25):
-            cells[(left + 5, y)] = "bright"
-    for x in range(22, 30):
-        y = 19 if 22 <= x < 26 else 24
-        cells[(x, y)] = "bright"
-    for y in range(19, 25):
-        cells[(22, y)] = "bright"
-        cells[(26, y)] = "bright"
-    cells[(30, 24)] = "bright"
+        left = 10 + tooth * 5
+        for step in range(5):
+            cells[(left + step, 25 - step)] = "bright"
+        for y in range(21, 26):
+            cells[(left + 4, y)] = "bright"
+    cells[(20, 25)] = "bright"
+    for x in range(21, 30):
+        cells[(x, 21 if x < 25 else 25)] = "bright"
+    for y in range(21, 26):
+        cells[(21, y)] = "bright"
+        cells[(25, y)] = "bright"
+    cells[(30, 25)] = "bright"
     return cells
 
 

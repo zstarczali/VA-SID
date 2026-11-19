@@ -7,7 +7,7 @@
 <!-- badges:start -->
 <p align="center">
   <a href="https://github.com/zstarczali/VA-SID/blob/main/Cargo.toml"><img src="https://img.shields.io/badge/version-1.0.0-4c1" alt="Version"></a>
-  <a href="https://github.com/zstarczali/VA-SID/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0--or--later-blue" alt="License: GPL-3.0-or-later"></a>
+  <a href="https://github.com/zstarczali/VA-SID/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT"></a>
   <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/Rust-2021-B7410E?logo=rust&logoColor=white" alt="Rust 2021"></a>
   <a href="https://github.com/binaryfields/resid-rs"><img src="https://img.shields.io/badge/SID-reSID%20%7C%20VA%20SID%20Core-6c5eb5" alt="SID engines"></a>
   <a href="https://vice-emu.sourceforge.io/"><img src="https://img.shields.io/badge/C64-6510%20%7C%20CIA%20%7C%20VIC--II-555" alt="C64 chips"></a>
@@ -24,10 +24,6 @@
   <a href="https://github.com/zstarczali/SID-Studio"><img src="https://img.shields.io/badge/used%20by-VA%20SID%20Studio-8a2be2" alt="VA SID Studio"></a>
 </p>
 <!-- badges:end -->
-
-<p align="center">
-  <img src="assets/banner.png" alt="VA-SID: C64 SID emulation in Rust">
-</p>
 
 The Commodore 64 SID emulation shared by [C64 Visual Assembler](https://www.c64va.pro/) and
 [VA SID Studio](https://github.com/zstarczali/SID-Studio).
@@ -75,8 +71,8 @@ of VA SID Core with VICE's mos6581_8580 (it predates the cycle-clocked core API 
 
 ## License
 
-GPL-3.0-or-later (see [LICENSE](LICENSE)). It contains reSID by Dag Lem, Rust port by Sebastian
-Jastrzebski (`vendor/resid-rs`, GPL-3.0-or-later, with one fix, see its `VENDORED.md`); ports of
-VICE code in `src/mos6510.rs` and `src/c64/` (copyright the VICE Team, GPL-2.0-or-later); and in
-`src/sid_core.rs` and `vendor/sid-wave-tables` code and data derived from Dag Lem's `mos6581_8580`
-(GPL-2.0-or-later), as identified in the source.
+Original va-sid code is MIT-licensed; see [LICENSE](LICENSE). The reSID port (`vendor/resid-rs`,
+GPL-3.0-or-later), the VICE ports (`src/mos6510.rs`, `src/c64/`, GPL-2.0-or-later) and the parts of
+`src/sid_core.rs` / `vendor/sid-wave-tables` derived from `mos6581_8580` (GPL-2.0-or-later) keep their
+GPL terms; see [third-party licenses](THIRD_PARTY_NOTICES.md). Using the crate in a distributed
+program also requires compliance with those GPL terms.

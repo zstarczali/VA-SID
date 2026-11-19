@@ -64,11 +64,6 @@ The ignored tests are manual checks on real tunes (`SID_SMOKE_DIR`, `SID_DUMP_IN
 `samples/` holds the two tunes the tests play. `scripts/sid-reference` is the diagnostic comparison
 of VA SID Core with VICE's mos6581_8580 (it predates the cycle-clocked core API and needs updating).
 
-## Logo
-
-`assets/logo.svg` is the source; `python assets/make_logo.py` renders `logo.png` and `banner.png`
-(Pillow + Microsoft Edge). The banner uses the C64 Pro Mono font by Style.
-
 ## License
 
 Original va-sid code is MIT-licensed; see [LICENSE](LICENSE). The reSID port (`vendor/resid-rs`,
